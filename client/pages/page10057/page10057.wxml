@@ -48,7 +48,7 @@ module.exports.isArray = isArray;
     <text class="element text" style="{{data.style}}" data-latitude="{{detail_data.region_lat}}" data-longitude="{{detail_data.region_lng}}" data-address="{{(detail_data.region_string || '') + (detail_data.region_detail || '')}}" catchtap="textToMap">{{((detail_data.region_string || '') + (detail_data.region_detail || '')) || detail_data.default_map[0].text}}</text>
   </block>
   <block wx:else>
-    <text class="element text {{data.customFeature.isWordWrap == 1 ? 'text-word-wrap' : '' }}" style="{{data.style}}{{data.customFeature.isWordWrap == 1 ? '-webkit-line-clamp:' + data.customFeature['word-wrap'] : ''}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{data.content}}</text>
+    <text class="element text {{data.customFeature.isWordWrap == 1 ? 'text-word-wrap' : '' }}" style="{{data.customFeature.isSelect ? data.selectStyle : data.style }}{{data.customFeature.isWordWrap == 1 ? '-webkit-line-clamp:' + data.customFeature['word-wrap'] : ''}}" data-event-params="{{data.eventParams}}" data-compid="{{data.compId}}" catchtap="{{data.eventHandler}}">{{data.content}}</text>
   </block>
 </template>
 <view class="ele-container" wx:if="{{!text1.hidden}}">

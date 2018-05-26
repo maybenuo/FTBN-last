@@ -162,9 +162,11 @@ var pageData = {
         },
         "text9": {
             "type": "text",
-            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:solid;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:none;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "selectStyle": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:solid;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
             "content": "\u5317\u4eac\u5947\u864e\u79d1\u6280\u6709\u9650\u516c\u53f8\u7b49\u4e0e\u817e\u8baf\u79d1\u6280\uff08\u6df1\u5733\uff09\u6709\u9650\u516c\u53f8\u7b49\u4e0d\u6b63\u5f53\u7ade\u4e89\u7ea0\u7eb7\u4e0a\u8bc9\u6848\u3010\u6700\u9ad8\u4eba\u6c11\u6cd5\u9662\uff082013\uff09\u6c11\u4e09\u7ec8\u5b57\u7b2c5\u53f7\u6c11\u4e8b\u5224\u51b3\u4e66\u3011",
             "customFeature": {
+                "isSelect": true,
                 "boxColor": "rgb(0, 0, 0)",
                 "boxR": "5",
                 "boxStyle": false,
@@ -208,9 +210,11 @@ var pageData = {
         },
         "text11": {
             "type": "text",
-            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:none;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "selectStyle": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:solid;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
             "content": "\u6df1\u5733\u5e02\u817e\u8baf\u8ba1\u7b97\u673a\u7cfb\u7edf\u6709\u9650\u516c\u53f8\u4e0e\u5e7f\u5dde\u7f51\u6613\u8ba1\u7b97\u673a\u7cfb\u7edf\u6709\u9650\u516c\u53f8\u7b49\u4fb5\u5bb3\u97f3\u4e50\u4f5c\u54c1\u4fe1\u606f\u7f51\u7edc\u4f20\u64ad\u6743\u8bc9\u524d\u7981\u4ee4\u7ea0\u7eb7\u6848\u3010\u6e56\u5317\u7701\u6b66\u6c49\u5e02\u4e2d\u7ea7\u4eba\u6c11\u6cd5\u9662\uff082014\uff09\u9102\u6b66\u6c49\u4e2d\u77e5\u7981\u5b57\u7b2c5\u53f7\u30015-1\u53f7\u30015-2\u53f7\u6c11\u4e8b\u88c1\u5b9a\u4e66\u3011",
             "customFeature": {
+                "isSelect": false,
                 "boxColor": "rgb(0, 0, 0)",
                 "boxR": "5",
                 "boxStyle": false,
@@ -220,20 +224,29 @@ var pageData = {
                 "dataObject": false,
                 "word-wrap": 2,
                 "phoneNumberSource": "static",
-                "phoneDisplayContent": "static"
+                "phoneDisplayContent": "static",
+                "inner-page-link": "84o7e33gZ3_page10000",
+                "action": "inner-link"
             },
             "animations": [],
             "hidden": false,
             "page_form": "",
             "compId": "text11",
             "markColor": "",
-            "mode": 0
+            "mode": 0,
+            "itemType": "text",
+            "itemParentType": null,
+            "itemIndex": "text11",
+            "eventParams": "{\"inner_page_link\":\"84o7e33gZ3_page10000\",\"is_redirect\":0}",
+            "eventHandler": "itemSelect" // tapInnerLinkHandler
         },
         "text12": {
             "type": "text",
-            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:none;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "selectStyle": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:solid;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
             "content": "\u6df1\u5733\u5e02\u817e\u8baf\u8ba1\u7b97\u673a\u7cfb\u7edf\u6709\u9650\u516c\u53f8\u4e0e\u5e7f\u5dde\u7f51\u6613\u8ba1\u7b97\u673a\u7cfb\u7edf\u6709\u9650\u516c\u53f8\u7b49\u4fb5\u5bb3\u97f3\u4e50\u4f5c\u54c1\u4fe1\u606f\u7f51\u7edc\u4f20\u64ad\u6743\u8bc9\u524d\u7981\u4ee4\u7ea0\u7eb7\u6848\u3010\u6e56\u5317\u7701\u6b66\u6c49\u5e02\u4e2d\u7ea7\u4eba\u6c11\u6cd5\u9662\uff082014\uff09\u9102\u6b66\u6c49\u4e2d\u77e5\u7981\u5b57\u7b2c5\u53f7\u30015-1\u53f7\u30015-2\u53f7\u6c11\u4e8b\u88c1\u5b9a\u4e66\u3011",
             "customFeature": {
+                "isSelect": false,
                 "boxColor": "rgb(0, 0, 0)",
                 "boxR": "5",
                 "boxStyle": false,
@@ -243,20 +256,29 @@ var pageData = {
                 "dataObject": false,
                 "word-wrap": 2,
                 "phoneNumberSource": "static",
-                "phoneDisplayContent": "static"
+                "phoneDisplayContent": "static",
+                "inner-page-link": "84o7e33gZ3_page10000",
+                "action": "inner-link"
             },
             "animations": [],
             "hidden": false,
             "page_form": "",
             "compId": "text12",
             "markColor": "",
-            "mode": 0
+            "mode": 0,
+            "itemType": "text",
+            "itemParentType": null,
+            "itemIndex": "text12",
+            "eventParams": "{\"inner_page_link\":\"84o7e33gZ3_page10000\",\"is_redirect\":0}",
+            "eventHandler": "itemSelect" // tapInnerLinkHandler
         },
         "text13": {
             "type": "text",
-            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:none;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
+            "selectStyle": "background-color:rgba(0, 0, 0, 0);border-color:rgb(11, 83, 148);border-style:solid;border-width:4.6875rpx;color:rgb(102, 102, 102);font-size:28.125rpx;height:58.59375rpx;line-height:58.59375rpx;margin-left:auto;margin-right:auto;margin-top:11.71875rpx;opacity:1;text-align:left;width:703.125rpx;",
             "content": "\u5317\u4eac\u8da3\u62ff\u4fe1\u606f\u6280\u672f\u6709\u9650\u516c\u53f8\u4e0e\u5e7f\u5dde\u5e02\u53bb\u54ea\u4fe1\u606f\u6280\u672f\u6709\u9650\u516c\u53f8\u4e0d\u6b63\u5f53\u7ade\u4e89\u7ea0\u7eb7\u4e0a\u8bc9\u6848\u3010\u5e7f\u4e1c\u7701\u9ad8\u7ea7\u4eba\u6c11\u6cd5\u9662\uff082013\uff09\u7ca4\u9ad8\u6cd5\u6c11\u4e09\u7ec8\u5b57\u7b2c565\u53f7\u6c11\u4e8b\u5224\u51b3\u4e66\u3011",
             "customFeature": {
+                "isSelect": false,
                 "boxColor": "rgb(0, 0, 0)",
                 "boxR": "5",
                 "boxStyle": false,
@@ -266,14 +288,21 @@ var pageData = {
                 "dataObject": false,
                 "word-wrap": 2,
                 "phoneNumberSource": "static",
-                "phoneDisplayContent": "static"
+                "phoneDisplayContent": "static",
+                "inner-page-link": "page10039",
+                "action": "inner-link"
             },
             "animations": [],
             "hidden": false,
             "page_form": "",
             "compId": "text13",
             "markColor": "",
-            "mode": 0
+            "mode": 0,
+            "itemType": "text",
+            "itemParentType": null,
+            "itemIndex": "text13",
+            "eventParams": "{\"inner_page_link\":\"page10039\",\"is_redirect\":0}",
+            "eventHandler": "itemSelect" // tapInnerLinkHandler
         },
         "button14": {
             "type": "button",
@@ -580,7 +609,33 @@ var pageData = {
         app.tapVideoPlayHandler(e);
     },
     tapInnerLinkHandler: function (e) {
-        app.tapInnerLinkHandler(e);
+        wx.showLoading({
+            title: '提交中...',
+        });
+        setTimeout(function(){
+            wx.hideLoading();
+            app.tapInnerLinkHandler(e);
+        },2500);
+    },
+    itemSelect: function (e) {
+        let isSelect = [['text9', false], ['text11', false], ['text12', false], ['text13', false]];
+        isSelect.forEach((item) => {
+            if (e.currentTarget.dataset.compid === item[0]) {
+                item[0] = item[0] + ".customFeature.isSelect";
+                item[1] = true
+            } else {
+                item[0] = item[0] + ".customFeature.isSelect";
+                item[1] = false
+            }
+        });
+        this.setData({
+            [isSelect[0][0]]: isSelect[0][1],
+            [isSelect[1][0]]: isSelect[1][1],
+            [isSelect[2][0]]: isSelect[2][1],
+            [isSelect[3][0]]: isSelect[3][1]
+        }, (callback) => {
+            console.log('设置成功')
+        })
     },
     tapToPluginHandler: function (e) {
         app.tapToPluginHandler(e);
