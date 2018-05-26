@@ -601,45 +601,5 @@ module.exports.isArray = isArray;
     <template is="zcButton" data="{{data:button18}}"></template>
   </block>
 </block>
-<import src="../../components/wxParse/wxParse.wxml"/>
-<template name="zcPopupWindow19">
-  <view class="popup-window" hidden='{{ data.showPopupWindow !== true }}'>
-    <view class="popup-window-mask" style="background-color:{{ data.customFeature.maskBackgroundColor }}; opacity:{{ data.customFeature.maskOpacity }};" data-compdata="{{ data }}" bindtap="tapMaskClosePopupWindow"></view>
-    <view class="popup-window-content" style="{{data.style}}">
-      <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
-  <block wx:if="{{data.content[0].customFeature.segment == 'default_map' && real_value}}">
-  <!-- 在动态列表中的双栏中绑定地图 -->
-    <template is="zcText" data="{{data:data.content[0],  form_data: real_value.form_data}}"></template>
-  </block>
-  <block wx:elif="{{data.content[0].customFeature.segment == 'default_map'}}">
-  <!-- 动态列表,动态容器 与详情页绑定地图 -->
-    <template is="zcText" data="{{data:data.content[0], form_data: item.form_data, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{real_value}}">
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-  <block wx:else>
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-</view>
-
-
-    </view>
-  </view>
-</template>
-<view class="ele-container" wx:if="{{!popup_window19.hidden}}">
-  <block wx:if="{{real_value}}">
-    <template is="zcPopupWindow19" data="{{data:popup_window19, real_value:real_value, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:else>
-    <template is="zcPopupWindow19" data="{{data:popup_window19, real_value:item, detail_data:detail_data, index:index, item:item, parentType:popup_window19.parentCompid, page_form:popup_window19.page_form, dataId:dataId}}"></template>
-  </block>
-</view>
 
 </view>

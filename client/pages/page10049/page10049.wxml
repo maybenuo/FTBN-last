@@ -129,12 +129,7 @@ module.exports.isArray = isArray;
   </block>
 </view>
 
-<template name="zcFormVessel6">
-  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
-        bindsubmit="submitForm"
-        data-compid="form_vessel6"
-        data-fieldinfo="{{data.field_info}}">
-    <wxs module="pictureWxsModule">
+<wxs module="pictureWxsModule">
 var isArray = function(array) {
   return array.join ? true : false;
 }
@@ -159,20 +154,20 @@ module.exports.isArray = isArray;
     </view>
   </block>
 </template>
-<view class="ele-container" wx:if="{{!data.content[0].hidden}}">
+<view class="ele-container" wx:if="{{!picture6.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:data.content[0], real_value:real_value.form_data.sShfjqgngT, detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture6, real_value:real_value.form_data.sShfjqgngT, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{detail_data.sShfjqgngT && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], real_value:detail_data.sShfjqgngT, detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture6, real_value:detail_data.sShfjqgngT, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], real_value:item.form_data.sShfjqgngT, detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture6, real_value:item.form_data.sShfjqgngT, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcPicture" data="{{data:data.content[0], real_value:item.form_data.sShfjqgngT, detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture6, real_value:item.form_data.sShfjqgngT, detail_data: detail_data}}"></template>
   </block>
-</view><template name="zcLayoutVessel6_1_2_2">
+</view><template name="zcLayoutVessel7">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
     <view class="cell" style="{{data.cell_style_1}}">
@@ -279,39 +274,28 @@ module.exports.isArray = isArray;
 
   </view>
 </template>
-<view class="ele-container" wx:if="{{!data.content[1].hidden}}">
+<view class="ele-container" wx:if="{{!layout_vessel7.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcLayoutVessel6_1_2_2" data="{{data:data.content[1], real_value:real_value, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel7" data="{{data:layout_vessel7, real_value:real_value, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcLayoutVessel6_1_2_2" data="{{data:data.content[1], real_value:item, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel7" data="{{data:layout_vessel7, real_value:item, detail_data: detail_data}}"></template>
   </block>
 </view>
-
-  </form>
-</template>
-<view class="ele-container" wx:if="{{!form_vessel6.hidden}}">
-  <template is="zcFormVessel6" data="{{data:form_vessel6}}"></template>
-</view>
-<template name="zcFormVessel7">
-  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
-        bindsubmit="submitForm"
-        data-compid="form_vessel7"
-        data-fieldinfo="{{data.field_info}}">
-    <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
+<view class="ele-container" wx:if="{{!picture8.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture8, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture8, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture8, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture8, detail_data: detail_data}}"></template>
   </block>
-</view><template name="zcLayoutVessel7_1_2_2">
+</view><template name="zcLayoutVessel9">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
     <view class="cell" style="{{data.cell_style_1}}">
@@ -351,39 +335,28 @@ module.exports.isArray = isArray;
 
   </view>
 </template>
-<view class="ele-container" wx:if="{{!data.content[1].hidden}}">
+<view class="ele-container" wx:if="{{!layout_vessel9.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcLayoutVessel7_1_2_2" data="{{data:data.content[1], real_value:real_value, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel9" data="{{data:layout_vessel9, real_value:real_value, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcLayoutVessel7_1_2_2" data="{{data:data.content[1], real_value:item, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel9" data="{{data:layout_vessel9, real_value:item, detail_data: detail_data}}"></template>
   </block>
 </view>
-
-  </form>
-</template>
-<view class="ele-container" wx:if="{{!form_vessel7.hidden}}">
-  <template is="zcFormVessel7" data="{{data:form_vessel7}}"></template>
-</view>
-<template name="zcFormVessel8">
-  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
-        bindsubmit="submitForm"
-        data-compid="form_vessel8"
-        data-fieldinfo="{{data.field_info}}">
-    <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
+<view class="ele-container" wx:if="{{!picture10.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture10, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture10, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture10, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture10, detail_data: detail_data}}"></template>
   </block>
-</view><template name="zcLayoutVessel8_1_2_2">
+</view><template name="zcLayoutVessel11">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
     <view class="cell" style="{{data.cell_style_1}}">
@@ -423,39 +396,28 @@ module.exports.isArray = isArray;
 
   </view>
 </template>
-<view class="ele-container" wx:if="{{!data.content[1].hidden}}">
+<view class="ele-container" wx:if="{{!layout_vessel11.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcLayoutVessel8_1_2_2" data="{{data:data.content[1], real_value:real_value, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel11" data="{{data:layout_vessel11, real_value:real_value, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcLayoutVessel8_1_2_2" data="{{data:data.content[1], real_value:item, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel11" data="{{data:layout_vessel11, real_value:item, detail_data: detail_data}}"></template>
   </block>
 </view>
-
-  </form>
-</template>
-<view class="ele-container" wx:if="{{!form_vessel8.hidden}}">
-  <template is="zcFormVessel8" data="{{data:form_vessel8}}"></template>
-</view>
-<template name="zcFormVessel9">
-  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
-        bindsubmit="submitForm"
-        data-compid="form_vessel9"
-        data-fieldinfo="{{data.field_info}}">
-    <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
+<view class="ele-container" wx:if="{{!picture12.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture12, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture12, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture12, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture12, detail_data: detail_data}}"></template>
   </block>
-</view><template name="zcLayoutVessel9_1_2_2">
+</view><template name="zcLayoutVessel13">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
     <view class="cell" style="{{data.cell_style_1}}">
@@ -495,39 +457,28 @@ module.exports.isArray = isArray;
 
   </view>
 </template>
-<view class="ele-container" wx:if="{{!data.content[1].hidden}}">
+<view class="ele-container" wx:if="{{!layout_vessel13.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcLayoutVessel9_1_2_2" data="{{data:data.content[1], real_value:real_value, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel13" data="{{data:layout_vessel13, real_value:real_value, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcLayoutVessel9_1_2_2" data="{{data:data.content[1], real_value:item, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel13" data="{{data:layout_vessel13, real_value:item, detail_data: detail_data}}"></template>
   </block>
 </view>
-
-  </form>
-</template>
-<view class="ele-container" wx:if="{{!form_vessel9.hidden}}">
-  <template is="zcFormVessel9" data="{{data:form_vessel9}}"></template>
-</view>
-<template name="zcFormVessel10">
-  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
-        bindsubmit="submitForm"
-        data-compid="form_vessel10"
-        data-fieldinfo="{{data.field_info}}">
-    <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
+<view class="ele-container" wx:if="{{!picture14.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture14, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture14, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture14, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture14, detail_data: detail_data}}"></template>
   </block>
-</view><template name="zcLayoutVessel10_1_2_2">
+</view><template name="zcLayoutVessel15">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
     <view class="cell" style="{{data.cell_style_1}}">
@@ -567,39 +518,28 @@ module.exports.isArray = isArray;
 
   </view>
 </template>
-<view class="ele-container" wx:if="{{!data.content[1].hidden}}">
+<view class="ele-container" wx:if="{{!layout_vessel15.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcLayoutVessel10_1_2_2" data="{{data:data.content[1], real_value:real_value, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel15" data="{{data:layout_vessel15, real_value:real_value, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcLayoutVessel10_1_2_2" data="{{data:data.content[1], real_value:item, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel15" data="{{data:layout_vessel15, real_value:item, detail_data: detail_data}}"></template>
   </block>
 </view>
-
-  </form>
-</template>
-<view class="ele-container" wx:if="{{!form_vessel10.hidden}}">
-  <template is="zcFormVessel10" data="{{data:form_vessel10}}"></template>
-</view>
-<template name="zcFormVessel11">
-  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
-        bindsubmit="submitForm"
-        data-compid="form_vessel11"
-        data-fieldinfo="{{data.field_info}}">
-    <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
+<view class="ele-container" wx:if="{{!picture16.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture16, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture16, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture16, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture16, detail_data: detail_data}}"></template>
   </block>
-</view><template name="zcLayoutVessel11_1_2_2">
+</view><template name="zcLayoutVessel17">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
     <view class="cell" style="{{data.cell_style_1}}">
@@ -639,39 +579,28 @@ module.exports.isArray = isArray;
 
   </view>
 </template>
-<view class="ele-container" wx:if="{{!data.content[1].hidden}}">
+<view class="ele-container" wx:if="{{!layout_vessel17.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcLayoutVessel11_1_2_2" data="{{data:data.content[1], real_value:real_value, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel17" data="{{data:layout_vessel17, real_value:real_value, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcLayoutVessel11_1_2_2" data="{{data:data.content[1], real_value:item, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel17" data="{{data:layout_vessel17, real_value:item, detail_data: detail_data}}"></template>
   </block>
 </view>
-
-  </form>
-</template>
-<view class="ele-container" wx:if="{{!form_vessel11.hidden}}">
-  <template is="zcFormVessel11" data="{{data:form_vessel11}}"></template>
-</view>
-<template name="zcFormVessel12">
-  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
-        bindsubmit="submitForm"
-        data-compid="form_vessel12"
-        data-fieldinfo="{{data.field_info}}">
-    <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
+<view class="ele-container" wx:if="{{!picture18.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture18, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture18, detail_data: detail_data}}"></template>
   </block>
   <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture18, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcPicture" data="{{data:data.content[0], detail_data: detail_data}}"></template>
+    <template is="zcPicture" data="{{data:picture18, detail_data: detail_data}}"></template>
   </block>
-</view><template name="zcLayoutVessel12_1_2_2">
+</view><template name="zcLayoutVessel19">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
     <view class="cell" style="{{data.cell_style_1}}">
@@ -711,73 +640,27 @@ module.exports.isArray = isArray;
 
   </view>
 </template>
-<view class="ele-container" wx:if="{{!data.content[1].hidden}}">
+<view class="ele-container" wx:if="{{!layout_vessel19.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcLayoutVessel12_1_2_2" data="{{data:data.content[1], real_value:real_value, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel19" data="{{data:layout_vessel19, real_value:real_value, detail_data: detail_data}}"></template>
   </block>
   <block wx:else>
-    <template is="zcLayoutVessel12_1_2_2" data="{{data:data.content[1], real_value:item, detail_data: detail_data}}"></template>
+    <template is="zcLayoutVessel19" data="{{data:layout_vessel19, real_value:item, detail_data: detail_data}}"></template>
   </block>
 </view>
-<block wx:if="{{!data.content[2].hidden}}">
+<block wx:if="{{!button20.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcButton" data="{{data:data.content[2]}}"></template>
+    <template is="zcButton" data="{{data:button20}}"></template>
   </block>
   <block wx:elif="{{ detail_data && in_dynamic_vessel !== 'true' }}">
-    <template is="zcButton" data="{{data:data.content[2]}}"></template>
+    <template is="zcButton" data="{{data:button20}}"></template>
   </block>
   <block wx:elif="{{ in_dynamic_vessel === 'true' }}">
-    <template is="zcButton" data="{{data:data.content[2]}}"></template>
+    <template is="zcButton" data="{{data:button20}}"></template>
   </block>
   <block wx:else>
-    <template is="zcButton" data="{{data:data.content[2]}}"></template>
+    <template is="zcButton" data="{{data:button20}}"></template>
   </block>
 </block>
-
-  </form>
-</template>
-<view class="ele-container" wx:if="{{!form_vessel12.hidden}}">
-  <template is="zcFormVessel12" data="{{data:form_vessel12}}"></template>
-</view>
-<import src="../../components/wxParse/wxParse.wxml"/>
-<template name="zcPopupWindow13">
-  <view class="popup-window" hidden='{{ data.showPopupWindow !== true }}'>
-    <view class="popup-window-mask" style="background-color:{{ data.customFeature.maskBackgroundColor }}; opacity:{{ data.customFeature.maskOpacity }};" data-compdata="{{ data }}" bindtap="tapMaskClosePopupWindow"></view>
-    <view class="popup-window-content" style="{{data.style}}">
-      <view class="ele-container" wx:if="{{!data.content[0].hidden}}">
-  <block wx:if="{{data.content[0].customFeature.segment == 'default_map' && real_value}}">
-  <!-- 在动态列表中的双栏中绑定地图 -->
-    <template is="zcText" data="{{data:data.content[0],  form_data: real_value.form_data}}"></template>
-  </block>
-  <block wx:elif="{{data.content[0].customFeature.segment == 'default_map'}}">
-  <!-- 动态列表,动态容器 与详情页绑定地图 -->
-    <template is="zcText" data="{{data:data.content[0], form_data: item.form_data, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{real_value}}">
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-  <block wx:else>
-    <template is="zcText" data="{{data:data.content[0], detail_data: detail_data}}"></template>
-  </block>
-</view>
-
-
-    </view>
-  </view>
-</template>
-<view class="ele-container" wx:if="{{!popup_window13.hidden}}">
-  <block wx:if="{{real_value}}">
-    <template is="zcPopupWindow13" data="{{data:popup_window13, real_value:real_value, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:else>
-    <template is="zcPopupWindow13" data="{{data:popup_window13, real_value:item, detail_data:detail_data, index:index, item:item, parentType:popup_window13.parentCompid, page_form:popup_window13.page_form, dataId:dataId}}"></template>
-  </block>
-</view>
 
 </view>

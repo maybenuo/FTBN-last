@@ -5,7 +5,7 @@
     "enablePullDownRefresh": false ,
     "onReachBottomDistance": "50"
   },
-    "tabBar": {"borderStyle":"#000000","color":"#B2B4B9","selectedColor":"#7D8089","backgroundColor":"#FFFFFF","list":[{"iconPath":"images/5b08a597ca711.png","selectedIconPath":"images/5b08a597ca760.png","text":"首页","pagePath":"pages/84o7e33gZ3_page10000/84o7e33gZ3_page10000"},{"iconPath":"images/5b08a597e0e4e.png","selectedIconPath":"images/5b08a597e0eab.png","text":"我的","pagePath":"pages/userCenterComponentPage/userCenterComponentPage"}]},
+    "tabBar": {"borderStyle":"#000000","color":"#B2B4B9","selectedColor":"#7D8089","backgroundColor":"#FFFFFF","list":[{"iconPath":"images/5b08c411a9d70.png","selectedIconPath":"images/5b08c411a9dc2.png","text":"首页","pagePath":"pages/84o7e33gZ3_page10000/84o7e33gZ3_page10000"},{"iconPath":"images/5b08c411c1c18.png","selectedIconPath":"images/5b08c411c1c6a.png","text":"我的","pagePath":"pages/userCenterComponentPage/userCenterComponentPage"}]},
     "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
