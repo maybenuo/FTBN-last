@@ -8,7 +8,7 @@ const CONF = {
     // 微信小程序 App Secret
     appSecret: 'af8e299889050874cb5be9e88eab29f2',
 
-    // 是否使用腾讯云代理登录小程序
+    // 使用腾讯云代理登录小程序
     useQcloudLogin: true,
 
     /**
