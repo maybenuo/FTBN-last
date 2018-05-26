@@ -309,7 +309,7 @@ module.exports.isArray = isArray;
         </button>
       </block>
       <block wx:else>
-        <label class="element button" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+        <label class="element button" style="{{data.customFeature.isClick ? data.successStyle : data.style}}" data-event-params="{{data.eventParams}}" data-seat="{{data.seat}}" data-parent-compid="{{data.parentCompid}}" catchtap="{{data.eventHandler}}">
           {{data.content}}
         </label>
       </block>
