@@ -7568,7 +7568,7 @@ App({
 
   globalData:{
     appId: 'b4L5ZD17V4',
-    historyDataId: '10218',
+    historyDataId: '10258',
         tabBarPagePathArr: '["/pages/84o7e33gZ3_page10000/84o7e33gZ3_page10000","/pages/userCenterComponentPage/userCenterComponentPage"]',
         homepageRouter: '84o7e33gZ3_page10000',
     formData: null,
