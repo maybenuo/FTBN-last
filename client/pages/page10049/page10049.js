@@ -1069,7 +1069,13 @@ var pageData = {
         app.tapVideoPlayHandler(e);
     },
     tapInnerLinkHandler: function (e) {
-        app.tapInnerLinkHandler(e);
+        wx.showLoading({
+            title: '提交中...',
+        });
+        setTimeout(function(){
+            wx.hideLoading();
+            app.tapInnerLinkHandler(e);
+        },4000);
     },
     buttonClick: function (e) {
         console.log(e);
