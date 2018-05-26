@@ -10,7 +10,7 @@
   </view>
   <view wx:elif="{{ goodsInfo.goods_type == 0 }}">
     <view class="pull-right ico-moon icon-notebook" bindtap="goToMyOrder" wx:if="{{!goodsInfo.detail_type || goodsInfo.detail_type == 0}}"></view>
-    <view class="pull-right ico-moon icon-store2" bindtap="goToShoppingCart" wx:if="{{!goodsInfo.detail_type || goodsInfo.detail_type == 0}}">
+    <view class="pull-right ico-moon icon-store2" bindtap="goToHomepage" wx:if="{{!goodsInfo.detail_type || goodsInfo.detail_type == 0}}">
       <view class="goods-detail-cart-num" wx:if="{{ cartGoodsNum && cartGoodsNum != 0 }}">{{ cartGoodsNum }}</view>
     </view>
     <view class="pull-right ico-moon icon-new-share" bindtap="showQRCodeComponent" wx:if="{{goodsInfo.detail_type != 2}}"></view>

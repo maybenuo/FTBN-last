@@ -1473,6 +1473,11 @@ App({
         let url = '/index.php?r=AppData/getFormDataList';
         let customFeature = compData.customFeature;
 
+        let field = _this.getListVessel(compData);
+        let fieldData = {};
+        fieldData[compid + '.listField'] = field;
+        pageInstance.setData(fieldData);
+
         pageInstance.requestNum = pageRequestNum + 1;
         if(customFeature.vesselAutoheight == 1 && customFeature.loadingMethod == 1){
           param.page_size = customFeature.loadingNum || 10;
@@ -1484,7 +1489,7 @@ App({
           method: 'post',
           success: function (res) {
             if (res.status == 0) {
-              newdata = {};
+              let newdata = {};
 
               if (param.form !== 'form') {
                 for (let j in res.data) {
@@ -1499,8 +1504,10 @@ App({
                       res.data[j].form_data.virtual_price = _this.formVirtualPrice(res.data[j].form_data);
                     }
                     let description = res.data[j].form_data[k];
-
-                    if (_this.needParseRichText(description)) {
+                    
+                    if (field.indexOf(k) < 0 && /<("[^"]*"|'[^']*'|[^'">])*>/.test(description)) { //没有绑定的字段的富文本置为空
+                      res.data[j].form_data[k] = '';
+                    } else if (_this.needParseRichText(description)) {
                       res.data[j].form_data[k] = _this.getWxParseResult(description);
                     }
                   }
@@ -1992,7 +1999,7 @@ App({
         let compid = pageInstance.cityLocationComps[i];
         let customFeature = pageInstance.data[compid].customFeature;
         let form = customFeature.citylocation.customFeature.form;
-        pageInstance.data[compid].hidden = false;
+        pageInstance.data[compid].citylocationHidden = false;
         _this.getLocation({
           success: function (res) {
             let latitude = res.latitude,
@@ -2421,6 +2428,21 @@ App({
       }
     }
     return price;
+  },
+  getListVessel: function(comp){
+    let that = this;
+    let field = [];
+
+    for(let i = 0; i < comp.content.length; i++){
+      let cp = comp.content[i];
+      if (typeof cp.content == 'object'){
+        let f = that.getListVessel(cp);
+        field = field.concat(f);
+      } else if(cp.customFeature.segment){
+        field.push(cp.customFeature.segment);
+      }
+    }
+    return field;
   },
   getNewsCateList: function (event) {
 
@@ -3348,7 +3370,9 @@ App({
 
             let description = res.data[j].form_data[k];
 
-            if (_this.needParseRichText(description)) {
+            if (compData.type == 'list-vessel' && compData.listField.indexOf(k) < 0 && /<("[^"]*"|'[^']*'|[^'">])*>/.test(description)) { //没有绑定的字段的富文本置为空
+              res.data[j].form_data[k] = '';
+            } else if (_this.needParseRichText(description)) {
               res.data[j].form_data[k] = _this.getWxParseResult(description);
             }
           }
@@ -4334,6 +4358,7 @@ App({
         if (res.status == 0) {
           let newdata = {};
           let compid  = component_params['compid'];
+          let listField = pageInstance.data[compid].listField;
 
           for (let j in res.data) {
             for (let k in res.data[j].form_data) {
@@ -4347,8 +4372,9 @@ App({
               }
 
               let description = res.data[j].form_data[k];
-
-              if (that.needParseRichText(description)) {
+              if (listField.indexOf(k) < 0 && /<("[^"]*"|'[^']*'|[^'">])*>/.test(description)) { //没有绑定的字段的富文本置为空
+                res.data[j].form_data[k] = '';
+              } else if (that.needParseRichText(description)) {
                 res.data[j].form_data[k] = that.getWxParseResult(description);
               }
             }
@@ -4835,6 +4861,7 @@ App({
           if (listType === "goods-list") {
             newdata[search_compid + '.goods_data'] = page == 1 ? res.data : search_compData.goods_data.concat(res.data);
           } else if (listType === 'list-vessel') {
+            let listField = compData.listField;
             for (let j in res.data) {
               for (let k in res.data[j].form_data) {
                 if (k == 'category') {
@@ -4847,8 +4874,9 @@ App({
                   res.data[j].form_data.virtual_price = that.formVirtualPrice(res.data[j].form_data);
                 }
                 let description = res.data[j].form_data[k];
-
-                if (that.needParseRichText(description)) {
+                if (listField.indexOf(k) < 0 && /<("[^"]*"|'[^']*'|[^'">])*>/.test(description)) { //没有绑定的字段的富文本置为空
+                  res.data[j].form_data[k] = '';
+                }else if(that.needParseRichText(description)) {
                   res.data[j].form_data[k] = that.getWxParseResult(description);
                 }
               }
@@ -4893,7 +4921,7 @@ App({
     let pageInstance = this.getAppCurrentPage();
     let newdata      = pageInstance.data;
 
-    newdata[id].hidden = typeof(pageInstance.data[id].hidden) == undefined ? false : !pageInstance.data[id].hidden;
+    newdata[id].citylocationHidden = typeof(pageInstance.data[id].citylocationHidden) == undefined ? false : !pageInstance.data[id].citylocationHidden;
     newdata[id].provinces = ['请选择'];  newdata[id].citys =['请选择']; newdata[id].districts = ['请选择']
     newdata[id].provinces_ids =[null]; newdata[id].city_ids =[null]; newdata[id].district_ids = [null];
     for(let i in newdata[id].areaList){
@@ -4907,7 +4935,7 @@ App({
     let pageInstance = this.getAppCurrentPage();
     let id           = event.currentTarget.dataset.id;
     let newdata      = pageInstance.data;
-    newdata[id].hidden = !pageInstance.data[id].hidden;
+    newdata[id].citylocationHidden = !pageInstance.data[id].citylocationHidden;
     newdata[id].province = '';
     newdata[id].city = '';
     newdata[id].district = '';
@@ -4972,7 +5000,7 @@ App({
       newdata[id].city = '';
       newdata[id].district = '';
     } else {
-      newdata[id].hidden = !pageInstance.data[id].hidden;
+      newdata[id].citylocationHidden = !pageInstance.data[id].citylocationHidden;
       newdata[id].newlocal = newdata[id].province + ' ' + newdata[id].city + ' ' +      newdata[id].district;
       newdata[id].value = [0,0,0];
       this._citylocationList(event.currentTarget.dataset, newdata[id].region_id);
@@ -5039,6 +5067,7 @@ App({
             newdata[targetList.compid + '.goods_data'] = res.data;
           } else if (listType === 'list-vessel') {
             if(param.form !== 'form'){
+              let listField = pageInstance.data[compid].listField;
               for (let j in res.data) {
                 for (let k in res.data[j].form_data) {
                   if (k == 'category') {
@@ -5052,8 +5081,9 @@ App({
                   }
 
                   let description = res.data[j].form_data[k];
-
-                  if (that.needParseRichText(description)) {
+                  if (listField.indexOf(k) < 0 && /<("[^"]*"|'[^']*'|[^'">])*>/.test(description)) { //没有绑定的字段的富文本置为空
+                    res.data[j].form_data[k] = '';
+                  } else if (that.needParseRichText(description)) {
                     res.data[j].form_data[k] = that.getWxParseResult(description);
                   }
                 }
@@ -6154,6 +6184,7 @@ App({
       data: requestData,
       success: function (res) {
         let newData = {};
+        let listField = pageInstance.data[targetCompId].listField;
         for (let j in res.data) {
           for (let k in res.data[j].form_data) {
             if (k == 'category') {
@@ -6167,10 +6198,12 @@ App({
             }
 
             let description = res.data[j].form_data[k];
-
-            if (_this.needParseRichText(description)) {
+            if (listField.indexOf(k) < 0 && /<("[^"]*"|'[^']*'|[^'">])*>/.test(description)) { //没有绑定的字段的富文本置为空
+              res.data[j].form_data[k] = '';
+            }else if(_this.needParseRichText(description)) {
               res.data[j].form_data[k] = _this.getWxParseResult(description);
             }
+            
           }
         }
         newData[targetCompId + '.list_data'] = res.data;
@@ -7535,8 +7568,8 @@ App({
 
   globalData:{
     appId: 'b4L5ZD17V4',
-    historyDataId: '10063',
-        tabBarPagePathArr: '["/pages/84o7e33gZ3_page10000/84o7e33gZ3_page10000","/pages/page10039/page10039","/pages/userCenterComponentPage/userCenterComponentPage"]',
+    historyDataId: '10194',
+        tabBarPagePathArr: '["/pages/84o7e33gZ3_page10000/84o7e33gZ3_page10000","/pages/userCenterComponentPage/userCenterComponentPage"]',
         homepageRouter: '84o7e33gZ3_page10000',
     formData: null,
     userInfo: {},

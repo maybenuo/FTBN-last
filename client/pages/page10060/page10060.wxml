@@ -129,68 +129,16 @@ module.exports.isArray = isArray;
   </block>
 </view>
 
-<wxs module="pictureWxsModule">
-var isArray = function(array) {
-  return array.join ? true : false;
-}
-module.exports.isArray = isArray;
-</wxs>
-<template name="zcPicture">
-  <block wx:if="{{real_value && (data.customFeature.action !== 'call' || data.customFeature.phoneDisplayContent !== 'static')}}">
-    <block wx:if="{{pictureWxsModule.isArray(real_value)}}">
-      <view data-compdata="{{ data }}" data-real-value="{{ real_value }}" class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" data-imgArr="{{real_value}}" catchtap="{{data.eventHandler}}" wx:for="{{real_value}}" wx:key=""> 
-        <image src="{{real_value[index]}}" mode="scaleToFill"></image>
-      </view>
-    </block>
-    <block wx:else>
-      <view data-compdata="{{ data }}" class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" data-imgArr="{{real_value}}" catchtap="{{data.eventHandler}}">
-        <image src="{{real_value}}" mode="scaleToFill"></image>
-      </view>
-    </block>
-  </block>
-  <block wx:else>
-    <view data-compdata="{{ data }}" data-real-value="{{ real_value }}" class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" data-imgArr="{{data.content}}" catchtap="{{data.eventHandler}}">
-      <image src="{{data.content}}" mode="scaleToFill"></image>
-    </view>
-  </block>
+<template name="zcMap">
+  <view class="element map" data-event-params="{{data.customFeature.markers_json_str}}" catchtap="tapMapDetail" style="{{data.style}}">
+    <view class="map-mask"></view>
+    <map class="map-module" hidden="{{data.customFeature.type != 'withmap' }}" longitude="{{data.customFeature.lng}}" latitude="{{data.customFeature.lat}}" markers="{{data.customFeature.markers}}" scale="17"></map>
+    <text class="icon-location ico-moon"></text><view class="map-link">{{data.content}}</view>
+  </view>
 </template>
-<view class="ele-container" wx:if="{{!picture6.hidden}}">
-  <block wx:if="{{real_value}}">
-    <template is="zcPicture" data="{{data:picture6, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcPicture" data="{{data:picture6, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcPicture" data="{{data:picture6, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:else>
-    <template is="zcPicture" data="{{data:picture6, detail_data: detail_data}}"></template>
-  </block>
-</view><view class="ele-container" wx:if="{{!text7.hidden}}">
-  <block wx:if="{{text7.customFeature.segment == 'default_map' && real_value}}">
-  <!-- 在动态列表中的双栏中绑定地图 -->
-    <template is="zcText" data="{{data:text7,  form_data: real_value.form_data}}"></template>
-  </block>
-  <block wx:elif="{{text7.customFeature.segment == 'default_map'}}">
-  <!-- 动态列表,动态容器 与详情页绑定地图 -->
-    <template is="zcText" data="{{data:text7, form_data: item.form_data, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{real_value}}">
-    <template is="zcText" data="{{data:text7, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{detail_data && in_dynamic_vessel !== 'true'}}">
-    <template is="zcText" data="{{data:text7, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:elif="{{in_dynamic_vessel === 'true'}}">
-    <template is="zcText" data="{{data:text7, detail_data: detail_data}}"></template>
-  </block>
-  <block wx:else>
-    <template is="zcText" data="{{data:text7, detail_data: detail_data}}"></template>
-  </block>
-</view>
-
-<wxs module="buttonWxsModule">
+<view class="ele-container" wx:if="{{!map6.hidden}}">
+  <template is="zcMap" data="{{data:map6}}"></template>
+</view><wxs module="buttonWxsModule">
 var isArray = function(array) {
   return array instanceof Array;
 }
@@ -257,18 +205,18 @@ module.exports.isArray = isArray;
       </block>
     </block>
   </template>
-<block wx:if="{{!button8.hidden}}">
+<block wx:if="{{!button7.hidden}}">
   <block wx:if="{{real_value}}">
-    <template is="zcButton" data="{{data:button8}}"></template>
+    <template is="zcButton" data="{{data:button7}}"></template>
   </block>
   <block wx:elif="{{ detail_data && in_dynamic_vessel !== 'true' }}">
-    <template is="zcButton" data="{{data:button8}}"></template>
+    <template is="zcButton" data="{{data:button7}}"></template>
   </block>
   <block wx:elif="{{ in_dynamic_vessel === 'true' }}">
-    <template is="zcButton" data="{{data:button8}}"></template>
+    <template is="zcButton" data="{{data:button7}}"></template>
   </block>
   <block wx:else>
-    <template is="zcButton" data="{{data:button8}}"></template>
+    <template is="zcButton" data="{{data:button7}}"></template>
   </block>
 </block>
 
